@@ -10,5 +10,5 @@ public interface IConta {
 
     void imprimirExtrato();
     
-    void transferir(double valor) throws ValorInvalidoException;
+    void transferir(double valor, Conta contaDestino) throws ValorInvalidoException;
 }

@@ -42,15 +42,34 @@ public abstract class Conta implements IConta{
     }
 
     @Override
-    public void imprimirExtrato() {
-        
+    public void transferir(double valor, Conta contaDestino) {
+        try {
+            this.sacar(valor);
+            contaDestino.depositar(valor);
+
+        } catch (ValorInvalidoException e) {
+            e.printStackTrace();
+        }
         
     }
 
-    @Override
-    public void transferir(double valor) {
-        
-        
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getConta() {
+        return conta;
+    }
+
+    public void imprimirInfosComum() {
+        System.out.println(String.format("Titular %s", this.cliente.getNome()));
+        System.out.println(String.format("Agência %d", this.agencia));
+        System.out.println(String.format("Conta %d", this.conta));
+        System.out.println(String.format("Saldo %.2f", this.saldo));
     }
     
 }
