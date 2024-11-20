@@ -38,6 +38,7 @@ public abstract class Conta implements IConta{
             throw new ValorInvalidoException();
         }
 
+        this.saldo -= valor;
         return this.saldo;
     }
 
