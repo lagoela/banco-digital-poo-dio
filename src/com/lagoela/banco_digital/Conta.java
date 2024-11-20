@@ -65,7 +65,7 @@ public abstract class Conta implements IConta{
         return conta;
     }
 
-    public void imprimirInfosComum() {
+    public void imprimirInfosComuns() {
         System.out.println(String.format("Titular %s", this.cliente.getNome()));
         System.out.println(String.format("Agência %d", this.agencia));
         System.out.println(String.format("Conta %d", this.conta));
